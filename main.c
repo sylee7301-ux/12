@@ -1,23 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
-struct student{
-    int ID;
-    char name[10];
-    double grade;
+struct point{
+    int x;
+    int y;
 };
 
 int main (void){
-    struct student s1={0,"None",0};
+    struct point p1,p2;
+    int xdiff, ydiff;
+    double dist;
 
-    s1.ID=25;
-    strcpy(s1.name,"Siyeon");
-    s1.grade=4.3;
+    printf("input p1 coordinate(x,y):");
+    scanf("%d %d",&p1.x,&p1.y);
 
-    printf("ID:%d\n",s1.ID);
-    printf("name:%s\n",s1.name);
-    printf("grade:%f\n",s1.grade);
+    printf("input p2 coordinate(x,y):");
+    scanf("%d %d",&p2.x,&p2.y);
+
+    xdiff=p2.x-p1.x;
+    ydiff=p2.y-p1.y;
+    dist=sqrt(xdiff*xdiff+ydiff*ydiff);
+
+    printf("distance: %f",dist);
 
     return 0;
 
